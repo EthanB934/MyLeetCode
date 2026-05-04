@@ -8,7 +8,14 @@ var compress = function(chars) {
     for(let i = 0; i < chars.length; i++){
         if(i === 0) {
             string += chars[i];
+            i++
         }
+        if(string.includes(chars[i])) {
+            string += chars[i];
+        } else if (!string.includes(chars[i])) {
+            
+        }
+
     }
 };
 const chars = ["a","a","b","b","c","c","c"];
