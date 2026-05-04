@@ -3,7 +3,9 @@
  * @return {number}
  */
 var compress = function(chars) {
+    let s = "";
     let string = "";
+    let counter = 0;
 
     for(let i = 0; i < chars.length; i++){
         if(i === 0) {
@@ -11,12 +13,16 @@ var compress = function(chars) {
             i++
         }
         if(string.includes(chars[i])) {
-            string += chars[i];
-        } else if (!string.includes(chars[i])) {
-            
+            counter++;
+        } else if(!string.includes(chars[i])) {
+            s += string;
+            s += counter;
+            counter = 0;
+            string = "";
         }
-
     }
+
+    return s
 };
 const chars = ["a","a","b","b","c","c","c"];
 /*
