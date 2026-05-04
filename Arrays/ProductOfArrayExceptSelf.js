@@ -1,4 +1,4 @@
-import nums from "./data.js"
+import nums from "../data.js"
 
 const largeData = nums
 /**
