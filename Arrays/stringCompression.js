@@ -3,8 +3,10 @@
  * @return {number}
  */
 var compress = function(chars) {
+    let string = "";
+
     for(let i = 0; i < chars.length; i++){
-        
+            
     }
 };
 const chars = ["a","a","b","b","c","c","c"];
