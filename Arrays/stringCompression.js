@@ -5,26 +5,44 @@
 var compress = function(chars) {
     let s = "";
     let string = "";
-    let counter = 0;
+    let counter = 1;
 
     for(let i = 0; i < chars.length; i++){
         if(i === 0) {
             string += chars[i];
+
+            console.log("Starting character: " + chars[i]);
+
             i++
         }
         if(string.includes(chars[i])) {
+            console.log("Found repeated character: " + chars[i]);
             counter++;
+            console.log("Total repeats: " + counter);
+
         } else if(!string.includes(chars[i])) {
             s += string;
             s += counter;
-            counter = 0;
-            string = "";
+
+            console.log("Final string current state: " + s);
+
+            counter = 1;
+            string = chars[i];
+
+            console.log("Counter variables reset!")
+        }
+        if(i === (chars.length - 1)) {
+            s += string;
+            s += counter;
         }
     }
-
+    console.log("Final string: " + s);
     return s
 };
-const chars = ["a","a","b","b","c","c","c"];
+
+const chars = ["a","b","b","c","c","c"];
+
+compress(chars);
 /*
  * Given an array of characters chars, compress it 
  * using the following algorithm:
